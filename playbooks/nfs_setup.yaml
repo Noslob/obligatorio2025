@@ -34,15 +34,14 @@
     - name: Configurar /etc/exports para compartir
       ansible.builtin.copy:
         dest: /etc/exports
-        content: var/nfs_shared *(rw,sync,no_root_squash)
+        content: var/nfs_shared
         owner: root
         group: root
         mode: '0644'
-#      notify: Recargar configuracion de NFS
+      notify: Recargar configuracion de NFS
 
-# handlers:
-
-#    - name: Recargar configuracion de NFS
-#      ansible.builtin.command: 
-#        cmd: exportfs -r
+  handlers:
+     - name: Recargar configuracion de NFS
+       ansible.builtin.command: 
+         cmd: exportfs -r
 

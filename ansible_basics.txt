@@ -1,0 +1,79 @@
+1. ¿Qué es Ansible? Mencione dos actividades que se puedan hacer con Ansible
+
+R: Ansible es un motor open source que automatiza procesos informáticos, dichos procesos sirven para la preparación de la infraestructura de un servidor, la gestión de la configuración,
+la implementación de las aplicaciones y por último la organización de los sistemas. 
+
+Ansible puede utilizarse para instalar software, automatizar tareas cotidianas, preparar elementos de infraestructura y de red, mejorar la seguridad y el cumplimiento normativo, aplicar parches en los sistemas y
+organizar flujos de trabajo complejos. Ansible funciona conectandose a hosts y les inserta pequeños programas llamados módulos, los hosts son los extremos objetivo, es decir, servidores, dispositivos de red o computadoras que
+se desea gestionar con la plataforma. Los módulos se utilizan para realizar tareas de automatización en Ansible, estos programas se escriben para que sean configurados como modelos de los recursos del estado deseado del sistema. 
+Ansible los ejecuta y los elimina al finalizar. 
+
+Los módulos en Ansible se pueden escribir en cualquier lenguaje que se convierta en JSON, cómo Ruby, Python o Bash. 
+
+Dos actividades que se pueden hacer con Ansible:
+
+A) Configurar servidores automáticamente: instalar paquetes, crear/editar archivos de config, gestionar servicios, usuarios y permisos (por ejemplo, usar módulos yum/apt, template, service).
+
+B) Desplegar y orquestar aplicaciones: copiar builds, aplicar variables/plantillas, hacer rolling updates en múltiples hosts, ejecutar tareas en orden con playbooks y roles.
+
+
+2. ¿Que es un playbook de Ansible?
+
+R: Los playbooks en Ansible se utilizan para organizar los procesos de TI. El playbook es un archivo YAML con extensión .yml o .yaml, los playbooks sirven para definir el estado deseado de un sistema. Los Playbooks son conjuntos
+ordenados de tareas que se ejecutan en las selecciones del host desde el archivo de inventario de Ansible. Las tareas son los elementos que conforman adentro del archivo de Playbooks y realizan llamadas a los módulos de Ansible.
+
+Las tareas en Playbooks se ejecutan en el orden que fueron escritas en el archivo. Cuando Ansible comienza a ejecutarse, el mismo puede hacer un seguimiento del estado actual del sistema. Si al hacerlo detecta q ue la descripción
+del playbook sobre el sistema no coincide con su estado real, implementará todos los cambios necesarios para que se cumpla esta correspondencia.
+
+
+3. ¿Que información contiene un inventario en Ansible?.
+
+R: Un inventario de Ansible contiene información sobre los hosts que Ansible gestiona, incluyendo sus direcciones IP, nombres de host, y otros detalles de conexión. Además, permite organizar los hosts en grupos para facilitar 
+la gestión y la aplicación de tareas. También puede incluir variables específicas para cada host o grupo, permitiendo una configuración personalizada. 
+
+La información que contiene un inventario de Ansible puede incluir:
+
+Hosts, una lista de las máquinas que Ansible va a gestionar, identificads por sus direcciones IP o nombres de host.
+Grupos, los hosts se pueden agrupar por diferentes criterios, como su función, entorno, es decir, si es parte de desarrollo o producción, o cualquier característica que sea relevante.
+Variables, en el inventario se pueden definir variables específicasa para cada host o grupo, permitiendo personalizar la configuración de cada uno. 
+Información de conexión: Por último, se puede indicar detalles sobre cómo Ansible debe de conectarse a los hosts, como el usuario y la contraseña, o la clave SSH. 
+
+El inventario se utiliza para especificar a qué hosts se aplicarán las tareas definidas en un playbook de Ansible. 
+Al ejecutar un playbook, Ansible utiliza la información del inventario para conectarse a los hosts y ejecutar las acciones especificadas. 
+
+
+4.Explique que es un módulo de Ansible y dé un ejemplo.
+
+R: Un módulo de Ansible es un componente esencial que realiza tareas específicas en sistemas remotos o locales dentro de un entorno de automatización. Son como pequeños scripts que ejecutan acciones como instalar software, 
+administrar archivos y directorios, configurar servicios, o interactuar con interfaces de programación de aplicaciones (APIs). Específicamente un módulo son piezas de código, que realizan una tarea previamente específicada. Cada
+módulo define una acción o recurso que se debe de administrar o configurar en los sistemas. Los módulos incluyen metadatos que específican cuándo, dónde y por quién se ejecuta la tarea solicitada. Los módulos devuelven datos en formato
+JSON (Formato basado en texto para el intercambio de datos estructurados de JavaScript), lo que facilita su uso e integración con otros sistemas. 
+
+Ejemplos de módulos comunes: 
+
+-Apt: instala paquetes en sistemas Debian/Ubuntu
+-Yum: Instala paquetes en sistema Red Hat/CentOS
+-Service: Gestiona servicios (inicio, detener, reiniciar)
+-User: administra usuarios del sistema.
+-Shell: Ejecuta comandos en shell.
+
+Los módulos son importantes ya que permite una arquitectura flexible y adaptable para diferentes entornos, se pueden reutilizar en diferentes playbooks, lo que facilita la creación de flujos de trabajo complejos. Permiten la gestión
+de la configuración, es decir, se automatiza la configuración de sistemas de manera consistente y eficiente. Se puede desplegar aplicaciones que ayudan a automatizar el despliegue y gestión de estas. Por último permiten definir y aplicar
+políticas de seguirdad en los sistemas. 
+
+5. ¿Que ventajas tiene Ansible sobre otros métodos de automatización?
+
+R: Ansible como ventaja sobre otras herramientas de automatización destaca por su simplicidad, ausencia de agentes en los nodos gestionados es decir, usa SSH/WinRM, no instalas nada en los nodos, estos resulta como ventaja de menos
+superficie de ataque, menos mantenimiento y un proceso de incorporación e integración más rápido, también reduce la sobrecarga de los sistemas. Como anteriormente hemos indicado, Ansible utiliza YAML para sus playbooks, 
+esto facilita la comprensión ya que Ansible es conocido por su sintaxis sencilla y fácil de aprender, utilizando YAML para describir las tareas de automatización. Esto permite que tanto usuarios con experiencia técnica como aquellos sin conocimientos profundos de programación puedan entender y utilizar la herramienta.
+La sintaxis sencilla de YAML y la ausencia de agentes facilitan la colaboración entre equipos de diferentes áreas, como DevOps e infraestructura.
+
+También Ansible ocupa como caracteristica fundamental su flexibilidad, este puede ser utilizado en una variedad de entornos, incluyendo nubes públicas y privadas, centro de datos y entornos híbridos. También se puede realizar una 
+automatización basada en eventos lo que permite responder rápidamente a cambios en tiempo real y reducir el tiempo de inactividad. 
+
+Por último, ansible proporciona herramientas para la gestión de contenido, lo que permite compartir y reutilizar la automatización en toda la organización e integración con otras herramientas como también plataformas, lo que facilita
+la creación de flujos de trabajo automatizados complejos.
+
+
+
+

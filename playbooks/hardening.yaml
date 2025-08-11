@@ -1,0 +1,12 @@
+---
+- name: hardening para ubuntu
+  host: ubuntu
+  become: yes
+
+  tasks:
+  
+  - name: sistema actualizado
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+      

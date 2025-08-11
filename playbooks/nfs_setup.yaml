@@ -12,7 +12,7 @@
    
     - name: Asegurar que el servicio NFS este iniciado y habilitado
       ansible.builtin.service:
-        name: nfs-server
+        name: nfs-utils
         state: started
         enabled: yes
 
@@ -38,11 +38,11 @@
         owner: root
         group: root
         mode: '0644'
-      notify: Recargar configuracion de NFS
+#      notify: Recargar configuracion de NFS
 
-#  handlers:
+# handlers:
 
-#     - name: Recargar configuracion de NFS
-#       asnsible.builtin.command: 
-#         cmd: exportfs -r
+#    - name: Recargar configuracion de NFS
+#      ansible.builtin.command: 
+#        cmd: exportfs -r
 
